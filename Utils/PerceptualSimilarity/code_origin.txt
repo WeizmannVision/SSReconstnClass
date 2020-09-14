@@ -1,0 +1,2 @@
+Code of this directory taken from:
+https://github.com/richzhang/PerceptualSimilarity
