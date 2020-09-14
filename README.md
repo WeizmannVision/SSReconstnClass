@@ -34,6 +34,7 @@ tar -xvf data.tar.gz
 # install conda env - assumes conda is already installed
 conda create -c pytorch -c defaults -c conda-forge -n bvsr --file env.yml
 ```
+Depending on your internet connection, this may take about 30 minutes.
 
 ## Demo
 The Demo version will produce results for 'fMRI on ImageNet' dataset (subject 3). To run the demo, do as follow:
