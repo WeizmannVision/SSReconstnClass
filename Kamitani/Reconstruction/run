@@ -2,16 +2,15 @@
 
 echo "start"
 
-DIR_r="/home/nivg/data/Kamitani_rec_cmp/new_project/"
-GPU="0"
-
+DIR_r=$1
+[[ "${DIR_r}" != */ ]] && DIR_r="${DIR_r}/"  # add trailing "/"
+GPU=$2
 mkdir -p $DIR_r;
 
-#ipython	Kamitani/Reconstruction/encoder_train.py $DIR_r $GPU 0 3
-ipython	Kamitani/Reconstruction/encdec_train.py $DIR_r $GPU 1 0 0 3
+#ipython	Kamitani/Reconstruction/encoder_train.py "$DIR_r" "$GPU" 0 3
+#ipython	Kamitani/Reconstruction/encdec_train.py "$DIR_r" "$GPU" 1 0 0 3
 
 IN_DIR="${DIR_r}encdec_stage_1_type_0_repeat_0/test_avg/"
 NAME="demo"
 
-ipython Kamitani/Recognition/Class_similarity_calc.py $IN_DIR $DIR_r $NAME
-
+ipython Kamitani/Recognition/Class_similarity_calc.py "$IN_DIR" "$DIR_r" "$NAME"

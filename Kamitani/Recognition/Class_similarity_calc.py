@@ -28,17 +28,19 @@ num_test_images = 50
 layers = [3]
 reconst_dirs = {}
 
-in_dir =  str(sys.argv[1])
+in_dir = str(sys.argv[1])
 res_dir = str(sys.argv[2])
 name = str(sys.argv[3])
 
-target_classes = np.load('data/ImageNet_Files/target_classes.npy')
+# target_classes = np.load('data/ImageNet_Files/target_classes.npy')
+target_classes = np.load('data/ImageNet_Files/examples_per_class.npz')['arr_0'].astype(np.float64)
 
-save_distances_file = res_dir + '/' + name + '_class_distance.npz'
+# save_distances_file = res_dir + '/' + name + '_class_distance.npz'
+save_distances_file = None
 save_acc_npz = res_dir + '/' + name + '_class_acc.npz'
 save_acc_df = res_dir + '/' + name + '_class_acc.csv'
 
-reconst_dirs['full'] = in_dir
+reconst_dirs[name] = in_dir
 
 
 num_images_per_class = 100
@@ -194,9 +196,10 @@ from Utils.image_functions import image_prepare
 #             count += 1
 #
 #
-#     target_classes = np.concatenate([class_images,class_images_ext],axis=0)*255.0
-#     print(target_classes.shape)
-#     np.save(res_dir + '/target_classes.npy', target_classes)
+#     examples_per_class = np.concatenate([class_images, class_images_ext],axis=0) * 255.0
+#     print(examples_per_class.shape)
+#     np.savez_compressed(res_dir + '/examples_per_class.npz', examples_per_class.astype(np.uint8))
+#     # np.save(res_dir + '/target_classes.npy', examples_per_class)
 ################################## Calc distances #####################################################################
 
 reconst= {}
@@ -290,4 +293,4 @@ rcParams['figure.figsize'] = 12,8
 
 ax = sns.barplot(x="out_of", y="acc", data=df, hue='method', ci="sd")
 fig = ax.get_figure()
-plt.show()
+plt.savefig(res_dir + '/classification_results_graph.png')

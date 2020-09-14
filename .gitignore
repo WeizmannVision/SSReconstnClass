@@ -109,3 +109,7 @@ venv.bak/
 # VSCode project settings
 .vscode/
 
+# Data directories
+data
+data/
+data_*/
