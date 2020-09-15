@@ -21,7 +21,7 @@ compatibility >=7.0.
 Additionally, enough RAM to support in-memory operations is required (estimated 50G).
 
 ## Installation Guide
-Run the following commands in bash:
+Run the following commands in **bash** (other shells requires some modification to the following scripts):
 ```bash
 # download the code
 git clone https://github.com/WeizmannVision/BrainVisualSemanticReconst
@@ -37,7 +37,7 @@ conda create -c pytorch -c defaults -c conda-forge -n bvsr --file env.yml
 Depending on your internet connection, this may take about 30 minutes.
 
 ## Demo
-The Demo version will produce results for 'fMRI on ImageNet' dataset (subject 3). To run the demo, do as follow:
+The Demo version will produce results for 'fMRI on ImageNet' dataset (subject 3). To run the demo, run the following commands in **bash** (other shells requires some modification to the following scripts):
 ```bash
 # go to the project directory
 cd <PROJECT_DIR>
