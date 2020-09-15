@@ -1,18 +1,18 @@
-# Brain Visual and Semantic Reconstruction
+# Self-Supervised Image Recnostruction & Classification from fMRI 
 
 ## Software Requirements
 ### OS Requirements
-* Linux
+* Linux 7.6.1810
 
 ### Python Dependencies
 * python 3.6
 * tensorflow 1.14
 * keras 2.2.4
 * pytorch 1.1.0
-* numpy
-* pandas
-* sklearn
-* seaborn
+* numpy 1.16.2
+* pandas 0.24.2
+* sklearn 0.20.3
+* seaborn 0.9.0
 
 ## Hardware Requirements
 These experiments were conducted on Tesla V100 (16GB). The code can run on any GPU with at least 16GB and CUDA
@@ -24,8 +24,8 @@ Additionally, enough RAM to support in-memory operations is required (estimated 
 Run the following commands in **bash** (other shells requires some modification to the following scripts):
 ```bash
 # download the code
-git clone https://github.com/WeizmannVision/BrainVisualSemanticReconst
-cd BrainVisualSemanticReconst
+git clone https://github.com/WeizmannVision/SSReconstnClass
+cd SSReconstnClass
 # download the data
 wget https://dl.dropboxusercontent.com/s/ttx8q0m8mmaz4id/data.tar.gz
 # extract the data
