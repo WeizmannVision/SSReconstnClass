@@ -7,8 +7,8 @@ DIR_r=$1
 GPU=$2
 mkdir -p $DIR_r;
 
-#ipython	Kamitani/Reconstruction/encoder_train.py "$DIR_r" "$GPU" 0 3
-#ipython	Kamitani/Reconstruction/encdec_train.py "$DIR_r" "$GPU" 1 0 0 3
+ipython	Kamitani/Reconstruction/encoder_train.py "$DIR_r" "$GPU" 0 3
+ipython	Kamitani/Reconstruction/encdec_train.py "$DIR_r" "$GPU" 1 0 0 3
 
 IN_DIR="${DIR_r}encdec_stage_1_type_0_repeat_0/test_avg/"
 NAME="demo"
