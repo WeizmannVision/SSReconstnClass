@@ -42,7 +42,7 @@ from keras.models import Model
 from keras.callbacks import LearningRateScheduler
 
 from Utils.save_images import save_model_results
-from Kamitani.data.kamitani_data_handler import kamitani_data_handler as data_handler
+from fMRIonImageNet.data.kamitani_data_handler import kamitani_data_handler as data_handler
 from Utils.gen_functions import calc_snr
 
 from Models.encoder_model import *

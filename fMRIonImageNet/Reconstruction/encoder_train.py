@@ -25,7 +25,7 @@ from Utils.gen_functions import calc_snr
 from Models.encoder_model import *
 from Utils.batch_generator import *
 
-from Kamitani.data.kamitani_data_handler import kamitani_data_handler as data_handler
+from fMRIonImageNet.data.kamitani_data_handler import kamitani_data_handler as data_handler
 import numpy as np
 
 # Inputs

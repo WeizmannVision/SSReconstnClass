@@ -46,12 +46,12 @@ conda activate bvsr
 # resolve some CXXABI issues that may arise
 export LD_LIBRARY_PATH="$CONDA_PREFIX/lib:$LD_LIBRARY_PATH"
 # run code
-Kamitani/Reconstruction/run <RESULTS_DIR> <GPU_ID>
+fMRIonImageNet/Reconstruction/run <RESULTS_DIR> <GPU_ID>
 ```
 Note that `<SOMETHING>` should be replaced in the above example, based on the specific paths and GPU you want to use.
 
 Once done (in our settings it takes ~1.5 hours), the result can be found in the provided `<RESULTS_DIR>`.
-The resultsdirectory will contains:
+The results directory will contain:
 * Weights for trained encoder and decoder (in `<RESULTS_DIR>/XX.hdf5`).
 * Image reconstructions (in `<RESULTS_DIR>/encdec_stage_1_type_0_repeat_0/test_avg`).
 * Classification results:
