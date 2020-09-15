@@ -25,7 +25,7 @@ Run the following commands in **bash** (other shells requires some modification 
 ```bash
 # download the code
 git clone https://github.com/WeizmannVision/SSReconstnClass
-cd SSReconstnClass
+cd ssReconstnClass
 # download the data
 wget https://dl.dropboxusercontent.com/s/ttx8q0m8mmaz4id/data.tar.gz
 # extract the data
