@@ -48,20 +48,16 @@ class vgg_layer_loss():
         self.img_len = img_len
         x = Lambda(self.vgg_in)(in_img)
         model = vgg16.VGG16(weights='imagenet', include_top=False, input_shape=(img_len, img_len, 3), input_tensor=x)
-        model2 = vgg19.VGG19(weights='imagenet', include_top=False, input_shape=(img_len, img_len, 3), input_tensor=x)
         model.trainable = False
-        model2.trainable = False
         for layer in model.layers:
-            layer.trainable = False
-        for layer in model2.layers:
             layer.trainable = False
         selectedLayers = [2, 3, 6, 10, 14, 18]
         selectedOutputs = [model.layers[i].output for i in selectedLayers]
 
         # get the symbolic outputs of each "key" layer (we gave them unique names).
-        outputs_dict = dict([(layer.name, layer.output) for layer in model2.layers])
+        outputs_dict = dict([(layer.name, layer.output) for layer in model.layers])
 
-        for layer in model2.layers:
+        for layer in model.layers:
             self.layer_embed[layer.name] = Model(inputs=in_img, outputs=outputs_dict[layer.name])
 
         self.lossModel = Model(model.inputs, selectedOutputs)

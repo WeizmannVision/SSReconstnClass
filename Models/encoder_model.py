@@ -93,7 +93,7 @@ def encoder_ml_seperable(param,vgg_loss,ch_mult = 1,name ='encoder'):
     out2 = locally_connected_1d(l1=param.lc_l1)(conv2)
 
 
-    x3 = vgg_loss.layer_embed['block3_conv4'](x)
+    x3 = vgg_loss.layer_embed['block3_conv3'](x)
     conv3 = BatchNormalization(axis=-1)(x3)
     conv3 = Conv2D(int(param.conv_ch*ch_mult), (3, 3), padding='same', kernel_initializer="glorot_normal", activation='relu',
                    kernel_regularizer=l1(param.conv_l1_reg), strides=(1, 1))(conv3)
@@ -105,7 +105,7 @@ def encoder_ml_seperable(param,vgg_loss,ch_mult = 1,name ='encoder'):
     out3 = locally_connected_1d(l1=param.lc_l1)(conv3)
 
 
-    x4 = vgg_loss.layer_embed['block4_conv4'](x)
+    x4 = vgg_loss.layer_embed['block4_conv3'](x)
     conv4 = BatchNormalization(axis=-1)(x4)
     conv4 = Conv2D(int(param.conv_ch*ch_mult), (1, 1), padding='same', kernel_initializer="glorot_normal", activation='relu',
                             kernel_regularizer=l1(param.conv_l1_reg), strides=(1, 1))(conv4)
