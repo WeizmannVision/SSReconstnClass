@@ -182,16 +182,12 @@ def encdec(NUM_VOXELS,RESOLUTION,encoder_model,decoder_model):
     rec_img_dec = decoder_model(input_voxel)
 
     rec_img_encdec = decoder_model(pred_voxel)
-    pred_voxel_decenc = encoder_model(rec_img_dec)
+    pred_voxel_decenc = input_voxel # remove DE path
 
     if type == 0:
         if(repeat == 2 or repeat == 1):
             print('no ED')
             rec_img_encdec = input_img
-
-        if (repeat == 3 or repeat == 1):
-            print('no DE')
-            pred_voxel_decenc = input_voxel
 
 
     out_rec_img = Lambda(lambda t: K.switch(t[0],t[1],t[2]) ,name = 'out_rec_img') ([input_mode,rec_img_dec,rec_img_encdec])
@@ -236,7 +232,7 @@ reduce_lr = LearningRateScheduler(step_decay)
 
 collage_cb = log_image_collage_callback(Y_test_avg, X_test_sorted, decoder_model, dir = res_dir+name+'/test_collge_ep/')
 
-loader_train = batch_generator_encdec(X, Y, Y_test, labels, batch_paired = batch_paired, batch_unpaired = batch_unpaired, num_ext_per_class=num_ext_per_class, ignore_test_fmri_labels=ignore)
+loader_train = batch_generator_encdec(X, Y, np.zeros(Y_test.shape), labels, batch_paired = batch_paired, batch_unpaired = batch_unpaired, num_ext_per_class=num_ext_per_class, ignore_test_fmri_labels=ignore)
 
 model.fit_generator(loader_train, epochs=epochs, verbose=2,callbacks=[reduce_lr, collage_cb],workers=3,use_multiprocessing=True) #epochs
 
