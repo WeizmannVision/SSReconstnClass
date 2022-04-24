@@ -1,5 +1,13 @@
 # Self-Supervised Image Recnostruction & Classification from fMRI 
 
+***Official Keras implementation for:***
+> **Self-Supervised Natural Image Reconstruction and Large-Scale Semantic Classification From Brain Activity** \
+> *Guy Gaziv\*, Roman Beliy\*, Niv Granot\*, Assaf Hoogi, Francesca Strappini, Tal Golan, Michal Irani*  
+
+<a href="https://doi.org/10.1016/j.neuroimage.2022.119121" target="_blank"><img src="https://img.shields.io/badge/NeuroImage-paper-b31b1b.svg" height=22.5></a>
+<a href="http://www.wisdom.weizmann.ac.il/~vision/SSReconstnClass/" target="_blank"><img src="https://img.shields.io/badge/-Project Page-yellowgreen.svg" height=22.5></a>
+<a href="https://video.tau.ac.il/events/index.php?option=com_k2&view=item&id=10112:fmri&Itemid=550" target="_blank"><img src="https://img.shields.io/badge/-Summary Video-yellow.svg" height=22.5></a>
+
 ## Software Requirements
 ### OS Requirements
 * Linux 7.6.1810
@@ -70,3 +78,21 @@ The results directory will contain:
     1. Run command has more arguments (for ablation studies and choice of subject).
     2. Includes a code for _n_-way identification (Perceptual-Similarity based) that will run under the same command.
 3. Code for vim-1 will also be published and will have similar structure and instructions.
+
+
+##
+### Acknowledgments
+- This code borrows from [Perceptual Similarity Metric](https://github.com/richzhang/PerceptualSimilarity).
+- The original datasets behind the released data derivatives are ([fMRI on ImageNet](https://openneuro.org/datasets/ds001246/versions/1.0.1), and [ILSVRC](https://image-net.org/challenges/LSVRC/index.php)).
+##
+### Citation
+If you find this repository useful, please consider giving a star ⭐️ and citation:
+```
+@article{Gaziv2022,
+	title = {{Self-Supervised Natural Image Reconstruction and Large-Scale Semantic Classification from Brain Activity}},
+	author = {Gaziv, Guy and Beliy, Roman and Granot, Niv and Hoogi, Assaf and Strappini, Francesca and Golan, Tal and Irani, Michal},
+	journal = {NeuroImage},
+	doi = {10.1016/J.NEUROIMAGE.2022.119121},
+	year = {2022}
+}
+```
