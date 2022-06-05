@@ -8,6 +8,8 @@
 <a href="http://www.wisdom.weizmann.ac.il/~vision/SSReconstnClass/" target="_blank"><img src="https://img.shields.io/badge/-Project Page-yellowgreen.svg" height=22.5></a>
 <a href="https://video.tau.ac.il/events/index.php?option=com_k2&view=item&id=10112:fmri&Itemid=550" target="_blank"><img src="https://img.shields.io/badge/-Summary Video-yellow.svg" height=22.5></a>
 
+⇨ [**NEW PyTorch implementation**](https://github.com/WeizmannVision/SelfSuperReconst)
+
 ## Software Requirements
 ### OS Requirements
 * Linux 7.6.1810
